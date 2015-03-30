@@ -14,9 +14,12 @@ feature 'registers a new user' do
 end
 
 feature 'logs a user out and in' do
-  scenario 'it logs a user out and in' do
+  scenario 'navbar links are hidden based on session status' do
     create_new_user
+    expect(page).to_not have_content("Register")
+
     click_link 'Sign out'
+    expect(page).to_not have_content("Sign out")
     expect(page).to have_content("Signed out successfully.")
 
     click_link 'Sign in'
@@ -25,6 +28,7 @@ feature 'logs a user out and in' do
     fill_in "Password", with: "password"
     click_on "Log in"
     expect(page).to have_content("Signed in successfully.")
+    expect(page).to_not have_content "Sign in"
   end
 end
 
