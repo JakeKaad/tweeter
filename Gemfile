@@ -16,7 +16,6 @@ gem "kaminari"
 gem 'simple_token_authentication'
 gem 'bootstrap-sass', :git => 'https://github.com/twbs/bootstrap-sass.git', :branch => 'next'
 gem 'autoprefixer-rails'
-gem "twitter-bootstrap-rails"
 gem 'poltergeist'
 
 group :development do
