@@ -248,6 +248,7 @@ DEPENDENCIES
   factory_girl
   jquery-rails
   kaminari
+  launchy
   letter_opener
   paperclip!
   pg
