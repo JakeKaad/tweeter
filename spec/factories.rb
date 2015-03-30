@@ -1,5 +1,12 @@
 FactoryGirl.define do
   factory :tweet do
-    content 'sample content'
+    sequence :content do |n|
+      "tweet #{n} "
+    end
+  end
+
+  factory :user do
+    email 'a@a.com'
+    password 'somereallyhardpassword'
   end
 end

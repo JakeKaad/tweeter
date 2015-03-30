@@ -1,0 +1,24 @@
+<h1>Welcome to <%= @user.email %>'s Profile</h1>
+
+
+
+<% if user_signed_in? && current_user == @user %>
+
+  <%= form_for Tweet.new, remote: true do |f| %>
+    <div class='form-group' >
+      <%= f.label :content, "New tweet" %>
+      <%= f.text_area :content, class: "form-control", id: "tweet-text-area", rows: 3 %>
+    </div>
+
+    <%= button_tag(type: 'submit', class: "btn btn-primary btn-lg", id: "new_tweet") do %>
+      <i class="glyphicon glyphicon-star"></i> Tweet
+    <% end %>
+  <% end %>
+
+<% end %>
+
+<ul id='tweets-list'>
+  <% @tweets.each do |tweet| %>
+    <%= render tweet, tweet: tweet %>
+  <% end %>
+</ul>

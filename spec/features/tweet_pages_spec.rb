@@ -11,7 +11,7 @@ feature 'index page' do
     scenario 'creates a new tweet' do
       create_new_user
       visit '/'
-      fill_in "New tweet", with: "Something"
+      fill_in "tweet-text-area", with: "Something"
       click_on "new_tweet"
       expect(page).to have_content "Something"
     end
@@ -24,6 +24,13 @@ feature 'index page' do
     end
   end
 
+  scenario 'created by emails link to user show page' do
+    user = FactoryGirl.create(:user)
+    tweet = FactoryGirl.create(:tweet, user_id: user.id)
+    visit "/"
+    click_link user.email
+    expect(page).to have_content "Welcome to #{user.email}"
+  end
 end
 
 def create_new_user

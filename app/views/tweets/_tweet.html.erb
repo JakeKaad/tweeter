@@ -2,5 +2,5 @@
   <%= tweet.content %>
 
   <hr>
-  by: <strong><%= tweet.user.email %></strong> <%= time_ago_in_words(tweet.created_at) %> ago
+  by: <strong><%= link_to tweet.user.email, tweet.user %></strong> <%= time_ago_in_words(tweet.created_at) %> ago
 </div>
