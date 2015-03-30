@@ -30,6 +30,11 @@ feature 'logs a user out and in' do
     expect(page).to have_content("Signed in successfully.")
     expect(page).to_not have_content "Sign in"
   end
+
+  scenario 'navbar displays current user info' do
+    create_new_user
+    expect(page).to have_content 'test@test.com'
+  end
 end
 
 def create_new_user

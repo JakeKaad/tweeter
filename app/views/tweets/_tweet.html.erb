@@ -1,0 +1,6 @@
+<div class="well tweet" >
+  <%= tweet.content %>
+
+  <hr>
+  by: <strong><%= tweet.user.email %></strong> <%= time_ago_in_words(tweet.created_at) %> ago
+</div>

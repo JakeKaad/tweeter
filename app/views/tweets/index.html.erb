@@ -1,1 +1,21 @@
-<h1> Hi</h1>
+<h1> Tweets! </h1>
+
+<% if user_signed_in? %>
+
+  <%= form_for @tweet do |f| %>
+    <div class='form-group' >
+      <%= f.label :content, "New tweet" %>
+      <%= f.text_area :content, class: "form-control", rows: 3 %>
+    </div>
+
+    <%= button_tag(type: 'submit', class: "btn btn-primary btn-lg", id: "new_tweet") do %>
+      <i class="glyphicon glyphicon-star"></i> Tweet
+    <% end %>
+  <% end %>
+
+<% end %>
+
+
+<% @tweets.each do |tweet| %>
+  <%= render "tweet", tweet: tweet %>
+<% end %>
