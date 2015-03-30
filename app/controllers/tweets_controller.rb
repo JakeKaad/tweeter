@@ -1,4 +1,5 @@
 class TweetsController < ApplicationController
+
   def index
     @tweet = Tweet.new
     @tweets = Tweet.all
@@ -11,7 +12,11 @@ class TweetsController < ApplicationController
     else
       flash[:alert] = "Sorry! Try again"
     end
-    redirect_to root_path
+    respond_to do |format|
+      format.html {  redirect_to root_path }
+      format.json
+    end
+
   end
 
   private

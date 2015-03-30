@@ -10,7 +10,6 @@ gem 'turbolinks'
 gem 'pry'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'devise'
-gem 'factory_girl'
 gem 'textacular'
 gem "kaminari"
 gem 'simple_token_authentication'
@@ -35,4 +34,5 @@ group :test do
   gem 'launchy'
 	gem 'shoulda-matchers'
 	gem 'capybara'
+  gem 'factory_girl_rails'
 end
